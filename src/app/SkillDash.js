@@ -7,6 +7,7 @@ import CircularProgressBar from './components/questionanalytics';
 import htmlimg from './images/html.png';
 import Image from 'next/image'
 import { useStats } from './context/StatsContext';
+
 const SkillTestDashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   // const [stats, setStats] = useState({
@@ -14,14 +15,18 @@ const SkillTestDashboard = () => {
   //   percentile: 90,
   //   score: 12
   // });
-  const { stats, updateStats } = useStats();
+  const { stats, updateStats, loading } = useStats();
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   // const updateStats = (newStats) => {
   //   setStats(newStats);
   // };
-
+  if (loading) {
+    return<div className="flex items-center justify-center min-h-screen">
+    <div>Loading...</div>
+  </div>; 
+  }
   return (
     <DashboardLayout activeItem="Skill Test">
       <div className="p-6 bg-white min-h-screen">
