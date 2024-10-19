@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 const CircularProgressBar = ({ percentage }) => {
     const radius = 40;

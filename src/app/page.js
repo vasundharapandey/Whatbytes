@@ -1,4 +1,7 @@
 import SkillTestDashboard from './SkillDash';
+import { StatsProvider } from './context/StatsContext';
 export default function Home() {
-  return <SkillTestDashboard />;
+  return    ( <StatsProvider>
+  <SkillTestDashboard />
+</StatsProvider>);
 }
